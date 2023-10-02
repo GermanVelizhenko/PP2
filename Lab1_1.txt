@@ -1,0 +1,64 @@
+1
+a = int(input())
+b = int(input())
+c = int(input())
+print(a + b + c)
+
+
+
+2
+b = int(input())
+h = int(input())
+print(0.5*b*h)
+
+
+
+3
+n = int(input())
+k = int(input())
+print(n//k)
+print(n-n//k)
+
+
+
+4
+n = int(input())
+print(n//60)
+print(n-60*(n//60))
+
+
+
+5
+n = (input())
+print("Hello,", n)
+
+
+
+6
+n = int(input())
+print("The next number for the number", n, "is", n+1)
+print("The previous number for the number", n, "is", n-1)
+
+
+
+7
+b = int(input())
+m = int(input())
+w = int(input())
+
+b=b//2+1*(b-2*(b//2))
+m=m//2+1*(m-2*(m//2))
+w=w//2+1*(w-2*(w//2))
+
+print(b+m+w)
+
+
+
+8
+a = int(input())
+b = int(input())
+l = int(input())
+N = int(input())
+
+s=2*(l+N*a+(N-1)*b)-a
+print(s)
