@@ -1,0 +1,79 @@
+1
+print(len(set(input().split())))
+
+ 
+
+2
+print (len(set(input().split()) & set(input().split())))
+
+ 
+
+3
+print(' '.join(map(str, set(input().split()) & set(input().split()))))
+
+ 
+
+4
+initial = input().split()
+secondary = set()
+for num in initial:
+    if num in secondary:
+        print("YES")
+    else:
+        secondary.add(num)
+        print("NO")
+
+5
+n, m = map(int, input().split())
+ani_colors, boris_colors = set(), set()
+
+for _ in range(n):
+    ani_colors.add(int(input()))
+
+for _ in range(m):
+    boris_colors.add(int(input()))
+
+both_colors = sorted(ani_colors & boris_colors)
+only_ani_colors = sorted(ani_colors - boris_colors)
+only_boris_colors = sorted(boris_colors - ani_colors)
+
+print(len(both_colors), *both_colors)
+print(len(only_ani_colors), *only_ani_colors)
+print(len(only_boris_colors), *only_boris_colors)
+
+6
+num_lines = int(input())
+unique_words = set(word for _ in range(num_lines) for word in input().split())
+print(len(unique_words))
+
+
+9
+n = int(input())
+all_known_languages, any_known_languages = set(), set()
+
+for _ in range(n):
+    num_languages = int(input())
+    known_languages = {input() for _ in range(num_languages)}
+    
+    all_known_languages = known_languages if not all_known_languages else all_known_languages & known_languages
+    any_known_languages.update(known_languages)
+
+print(len(all_known_languages))
+print(*sorted(all_known_languages), sep='\n')
+
+print(len(any_known_languages))
+print(*sorted(any_known_languages), sep='\n')
+
+
+10
+N, K = map(int, input().split())
+calendar = [0] * N
+
+for _ in range(K):
+    a, b = map(int, input().split())
+    for i in range(a - 1, N, b):
+        calendar[i] = 1
+
+strike_days = sum(1 for i in range(N) if calendar[i] == 1 and i % 7 not in {5, 6})
+
+print(strike_days)
