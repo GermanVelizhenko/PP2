@@ -1,0 +1,147 @@
+1
+a = int(input())
+b = int(input())
+
+if a>b:
+    print(b)
+else:
+    print(a)
+
+
+2
+a = int(input())
+
+if a>0:
+    print(1)
+elif a<0:
+    print(-1)
+else:
+    print(0)
+
+
+3
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+if (a+b) %2 == (c+d) %2:
+    print("YES")
+else:
+    print("NO")
+
+
+4
+a = int(input())
+
+if a%400 == 0:
+    print("Yes")
+elif a%100 == 0:
+    print("No")
+elif a%4 == 0:
+    print("Yes")
+else:
+    print("No")
+
+5
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a>=c and b>=c:
+    print(c)
+elif a>=b and c>=b:
+    print(b)
+else:
+    print(a)
+
+6
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a==b==c:
+    print(3)
+elif a==b or a==c or b==c:
+    print(2)
+else:
+    print(0)
+
+7
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+
+if x1 == x2 or y1 == y2:
+    print("YES")
+else:
+    print("NO")
+
+8
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+
+if (x1 - x2) in [-1, 0, 1] and (y1 - y2) in [-1, 0, 1]:
+    print("YES")
+else:
+    print("NO")
+
+9
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+
+if (x1 - x2) == (y1 - y2) or (x1 - x2) == -(y1 - y2):
+    print("YES")
+else:
+    print("NO")
+
+10
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+
+if (x1 - x2) == (y1 - y2) or (x1 - x2) == -(y1 - y2):
+    print("YES")
+elif x1 == x2 or y1 == y2:
+    print("YES")
+else:
+    print("NO")
+
+11
+x1 = int(input())
+y1 = int(input())
+x2 = int(input())
+y2 = int(input())
+
+x = x1 - x2
+y = y1 - y2
+
+if (x == 1 and y == 2) or (x == -1 and y == 2) or (x == 2 and y == 1) or (x == 2 and y == -1):
+    print("YES")
+else:
+    print("NO")
+
+12
+n = int(input())
+m = int(input())
+k = int(input())
+
+if m*n%k==0:
+    print("YES")
+else:
+    print("NO")
+
+13
+n = int(input())
+m = int(input())
+x = int(input())
+y = int(input())
+
+print(min(abs(x), abs(n - x), abs(y), abs(m - y)))
+
