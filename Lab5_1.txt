@@ -1,0 +1,176 @@
+functions1
+
+1
+def converter(grams):
+    ounces = 28.3495231 * grams
+    print(ounces)
+
+grams = int(input())
+converter(grams)
+
+
+2
+def converter(F):
+    Celsius = (5 / 9) * (F – 32)
+    print(Celsius)
+
+F = int(input())
+converter(F)
+
+
+
+3
+def solve(numheads, numlegs):
+    chickens=2*numheads-0.5*numlegs
+    rabits=numheads-chickens
+    print(rabits)
+    print(chickens)
+    
+numheads = int(input())
+numlegs = int(input())
+solve(numheads, numlegs)
+
+
+4
+def is_prime(number):
+
+    if number <= 1:
+        return False
+
+    if number <= 3:
+        return True
+
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    i = 5
+
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6       
+    return True
+
+ 
+
+def filter_prime(numbers):
+
+    prime_numbers = []
+    for num in numbers:
+        if is_prime(num):
+            prime_numbers.append(num)
+    return prime_numbers
+
+
+input_numbers = input()
+numbers_list = [int(num) for num in input_numbers.split()]
+
+prime_numbers = filter_prime(numbers_list)
+print(prime_numbers)
+
+
+5
+from itertools import permutations
+
+def print_permutations(input_string):
+    perms = [''.join(p) for p in permutations(input_string)]
+
+    for perm in perms:
+        print(perm)
+
+user_input = input()
+print_permutations(user_input)
+
+
+6
+def reverse_words(sentence):
+    words = sentence.split()
+    reversed_words = list(reversed(words))
+    reversed_sentence = ' '.join(reversed_words)
+    return reversed_sentence
+    
+print(reverse_words(input()))
+
+
+7
+def has_adjacent_3(nums):
+    for i in range(len(nums)):
+        if  (nums[i] == 3):
+            if (nums[i] == nums[i+1]):
+                return True
+    return False
+    
+number_list = list(map(int, input().split()))
+print(has_adjacent_3(number_list))
+
+
+8
+def has_spies(nums):
+    for i in range(len(nums) - 1):
+        if  (nums[i] == 0) and (nums[i+1] == 0) and (nums[i+2] == 7):
+            return True
+    return False
+    
+number_list = list(map(int, input().split()))
+print(has_spies(number_list))
+
+
+9
+import math
+
+def volume(radius):
+    volume = 4/3*math.pi*radius*radius*radius
+    print(volume)
+
+radius = int(input())
+volume(radius)
+
+
+10
+def unique_elements(input_list):
+    unique_list = []
+    for item in input_list:
+        if item not in unique_list:
+            unique_list.append(item)
+    return unique_list
+    
+print(unique_elements(input().split()))
+
+
+11
+def is_palindrome(word):
+
+    word = word.replace(" ", "").lower()
+    return word == word[::-1]
+
+input_word = input()
+if is_palindrome(input_word):
+    print(f"'{input_word}' is a palindrome.")
+else:
+    print(f"'{input_word}' is not a palindrome.")
+
+
+12
+def histogram(numbers):
+    for num in numbers:
+        print("*" * num)
+
+numbers_list = [int(num) for num in input().split()]
+histogram(numbers_list)
+
+
+13
+import random
+
+def guess_verifier(guess, number):
+    if guess < number:
+        print("Too low; try again:")
+    elif guess > number:
+        print("Too high; try again:")
+    else:
+        print("Congratulations! You got it!")
+
+number = random.randint(1, 20)
+guess = -1
+while guess != number:
+    guess = int(input())
+    guess_verifier(guess, number)

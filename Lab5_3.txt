@@ -1,0 +1,119 @@
+classes
+
+
+1
+class uppercaseinator:
+    def getString(self):
+        self.input_string = input("Enter a string: ")
+
+    def printString(self):
+        print("Uppercased:", self.input_string.upper())
+
+instance = uppercaseinator()
+instance.getString()
+instance.printString()
+
+
+2
+class Shape:
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, length):
+        self.length = square_length
+    def area(self):
+        return self.length ** 2
+
+square_length = int(input())
+shape = Shape()
+square = Square(square_length)
+
+print("Area of the generic shape:", shape.area())
+print("Area of the square:", square.area())
+
+
+3
+class Shape:
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    def area(self):
+        return self.length * self.width
+
+length = float(input("Enter the length of the rectangle: "))
+width = float(input("Enter the width of the rectangle: "))
+rectangle = Rectangle(length, width)
+
+print("Area of the rectangle:", rectangle.area())
+
+
+4
+import math
+
+class Point:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def show(self):
+        print(f"Coordinates: ({self.x}, {self.y})")
+
+    def move(self, new_x, new_y):
+        self.x = new_x
+        self.y = new_y
+
+    def dist(self, other_point):
+        distance = math.sqrt((self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2)
+        return distance
+
+point1 = Point(3, 4)
+point2 = Point(0, 0)
+
+point1.show()
+
+point1.move(1, 2)
+point1.show()
+
+distance = point1.dist(point2)
+print("Distance between point1 and point2:", distance)
+
+5
+class BankAccount:
+    
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            return f"Deposited ${amount}. New balance: ${self.balance}"
+        return "Invalid deposit amount. Please deposit a positive amount."
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            return f"Withdrew ${amount}. New balance: ${self.balance}"
+        return "Invalid withdrawal amount or insufficient balance."
+
+6
+def is_prime(num):
+    if num <= 1:
+        return False
+
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+numbers = list(mapint, (input().split()))
+
+prime_numbers = list(filter(lambda x: is_prime(x), numbers))
+print("Prime numbers:", prime_numbers)
+
