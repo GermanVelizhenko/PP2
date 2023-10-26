@@ -1,0 +1,40 @@
+1
+from datetime import datetime, timedelta
+ 
+current_date = datetime.now()
+just_the_date = current_date.date()
+
+new_date = just_the_date - timedelta(days=5)
+print("Current Date:", just_the_date)
+print("Date 5 days ago:", new_date)
+
+
+2
+from datetime import datetime, timedelta
+ 
+current_date = datetime.now()
+just_the_date = current_date.date()
+yesterday = just_the_date - timedelta(days=1)
+tomorrow = just_the_date + timedelta(days=1)
+ 
+print("Yesterday:", yesterday)
+print("Today:", just_the_date)
+print("Tomorrow:", tomorrow)
+
+
+3
+from datetime import datetime
+ 
+current_date = datetime.now()
+no_microseconds = current_date.replace(microsecond=0)
+print("Date without Microseconds:", no_microseconds)
+
+
+4
+from datetime import datetime
+ 
+date1 = datetime(2023, 10, 25, 15, 30, 0)
+date2 = datetime(2023, 10, 26, 10, 15, 0)
+
+difference = (date2 - date1).total_seconds()
+print(difference)

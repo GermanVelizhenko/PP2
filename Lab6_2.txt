@@ -1,0 +1,55 @@
+1
+def square_generator(n):
+    for i in range(2, n + 1):
+        yield i ** 2
+
+n = int(input("Enter a number: "))
+for square in square_generator(n):
+    print(square, end=' ')
+
+
+2
+def even_generator(n):
+    for i in range(2, n + 1):
+        if i % 2 == 0:
+            yield i
+ 
+n = int(input("Enter a number: "))
+for even in even_generator(n):
+    print(even, end=' ')
+
+
+3
+def multiple_generator(n):
+    for i in range(2, n + 1):
+        if i % 12 == 0:
+            yield i
+ 
+n = int(input("Enter a number: "))
+for multiple in multiple_generator(n):
+    print(multiple, end=' ')
+
+
+4
+def squares(a, b):
+    for i in range(a, b + 1):
+        yield i ** 2
+
+a = int(input("Enter a number: "))
+b = int(input("Enter a bigger number: "))
+if a<b:
+    for square in squares(a, b):
+        print(square, end=' ')
+else:
+    for i in range(a):
+        print("Stupid human")
+
+
+5
+def countdown(n):
+    for i in range(n + 1):
+        yield n-i
+
+n = int(input("Enter a number: "))
+for counter in countdown(n):
+    print(counter, end=' ')
