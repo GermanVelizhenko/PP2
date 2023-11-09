@@ -1,0 +1,44 @@
+1
+import math
+ 
+numbers = [737, 718, 991, 993]
+print(math.prod(numbers))
+
+
+2
+text = "Some meaningless text"
+upper_case = sum(1 for char in text if char.isupper())
+lower_case = sum(1 for char in text if char.islower())
+print(upper_case, "\n", lower_case, sep='')
+
+
+3
+text = "porsche"
+
+text = text.lower()
+reversed_text = text[::-1]
+    
+if text == reversed_text:
+    print("That's a palindrome.")
+else:
+    print("That's not a palindrome.")
+
+
+4
+import time, math
+ 
+number = 25100
+ms = 2123
+ 
+time.sleep(ms / 1000) 
+answer = math.sqrt(number)
+ 
+print(f"Square root of {number} after {ms} milliseconds is {answer}")
+
+
+5
+values = (True, True, False, True)
+if all(values):
+    print("True")
+else:
+    print("Not True.")

@@ -1,0 +1,80 @@
+1
+import os
+ 
+path = "/the_pass"
+directories = [d for d in os.listdir(path) if os.path.isdir(os.path.join(path, d))]
+files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+ 
+print("Directories:", directories)
+print("Files:", files)
+
+
+2
+import os
+ 
+path = "/the_pass"
+ 
+if os.path.exists(path):
+    print("Path exists.")
+    print("Is readable:", os.access(path, os.R_OK))
+    print("Is writable:", os.access(path, os.W_OK))
+    print("Is executable:", os.access(path, os.X_OK))
+else:
+    print("The path doesn't exist.")
+
+
+3
+import os
+ 
+path = "/the_pass"
+ 
+if os.path.exists(path):
+    print("Path exists.")
+    print("Filename:", os.path.basename(path))
+    print("Directory:", os.path.dirname(path))
+else:
+    print("The path doesn't exist.")
+
+
+4
+import os
+
+file_path = "/the_pass/file.txt"
+ 
+with open(file_path, "r") as file:
+    line_count = sum(1 for line in file)
+print(line_count)
+
+
+5
+the_list = ["item", "another item", "bonus item"]
+file_path = "/the_pass/file.txt"
+ 
+with open(file_path, "w") as file:
+    for item in the_list:
+        file.write(item + "\n")
+
+
+6
+import string
+ 
+for letter in string.ascii_uppercase:
+    file_name = letter + ".txt"
+
+
+7
+source_file = "file.txt"
+destination_file = "garbage_file.txt"
+ 
+with open(source_file, "r") as source, open(destination_file, "w") as destination:
+    destination.write(source.read())
+
+
+8
+import os
+ 
+file_path = "/the_pass/file.txt"
+ 
+if os.path.exists(file_path):
+    if os.access(file_path, os.W_OK):
+        os.remove(file_path)
