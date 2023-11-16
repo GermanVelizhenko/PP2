@@ -1,0 +1,50 @@
+import pygame
+from pygame.locals import K_SPACE, K_n, K_p
+
+def play_music():
+    global _songs
+    pygame.mixer.music.load(_songs[0])
+    pygame.mixer.music.play()
+
+def stop_music():
+    pygame.mixer.music.stop()
+
+def next_track():
+    global _songs
+    _songs = _songs[1:] + [_songs[0]]
+    pygame.mixer.music.load(_songs[0])
+    pygame.mixer.music.play()
+
+def previous_track():
+    global _songs
+    _songs = _songs[5:] + _songs[1:] + _songs[2:] + _songs[3:] + _songs[4:]
+    pygame.mixer.music.load(_songs[0])
+    pygame.mixer.music.play()
+
+
+
+def main():
+    pygame.init()
+    clock = pygame.time.Clock()
+
+    _songs = ['song_1.mp3', 'song_2.mp3', 'song_3.mp3', 'song_4.mp3', 'song_5.mp3']
+    pygame.mixer.music.load(_songs)
+
+    play_music(_songs)
+ 
+    while True:
+        for event in pygame.event.get():
+            if event.key == K_SPACE:
+                    if pygame.mixer.music.get_busy():
+                        stop_music()
+                    else:
+                        play_music(_songs)
+            elif event.key == K_n:
+                    next_track()
+            elif event.key == K_p:
+                    previous_track()
+ 
+        clock.tick(90)
+
+if __name__ == "__main__":
+    main()
